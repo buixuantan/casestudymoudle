@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function transDictionary(){
+        let engarray = ["hello", "one", "two"];
+        let viearray = ["xin chào", "một", "hai"];
+        let dn = ["dn1", "dn2", "dn3"];
+        // let dic = String(document.getElementById("input").value);
+        let dic = prompt("enter the word");
+        for (let i = 0; i < 3; i++){
+            if (dic == engarray[i])
+            {
+             // document.getElementById("output").innerText = vietnam[i];
+            document.write(`${viearray[i]}`);
+            return document.write(`${dn[i]}`);
+            }
+            }
+            
+            document.write(`this wourd not exist`);
+            
+            // document.getElementById("output").innerText = `not exist`;
+        }
+
+    </script>
+</body>
+</html>

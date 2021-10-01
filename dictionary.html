@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1" style="width: 65%;">
+        <caption>
+            <img src="/PHOTO/imgine.jpg" style="width: 65%; height: 200px;" alt="imgine">
+            <marquee>
+                <h4>hiển thị dòng chữ chạy</h4>
+            </marquee>
+        </caption>
+        <thead>
+            <tr>
+                <td>
+                    <select id="inputchange">
+                        <option value="english">English</option>
+                        <option value="vietnam">VietNam</option>
+                    </select>
+                </td>
+                <td>
+                    <input type="button" value="translanggua" onclick="changeLanggue()">
+                </td>
+                <td>
+                    <select id="outputchange">
+                        <option value="vietnam">VietNam</option>
+                        <option value="english">English</option>
+                    </select>
+                </td>
+            </tr>
+        </thead>
+        <tbody style="height: 200px;">
+            <tr>
+                <td colspan="2">
+                    <input type="text" id="input" style="height: 200px;">
+                    <input type="button" value="trans" onclick="transDictionary()">
+                </td>
+                <td>
+                    <input type="text" id="output" style="height: 200px;">
+                </td>
+            </tr>
+        </tbody>
+        <tfoot style="height: 100px;">
+            <tr>
+                <td colspan="3" id="idoutput">examble</td>
+            </tr>
+        </tfoot>
+        
+    </table>
+    <script>
+        window.document.onload = function(e){ 
+            
+        }
+
+        function transDictionary(){
+            let selboxone = document.getElementById("inputchange").selectedIndex;
+            // let selboxtwo = document.getElementById("outputchange").selectedIndex;
+            if (selboxone == 0){
+                transEngtoVi()
+            }
+            else
+            {
+                transVitoEng()
+            }
+        }
+
+        function transEngtoVi(){
+            let engarray = ["hello", "one", "two"];
+            let viearray = ["xin chào", "một", "hai"];
+            let dn = ["dn1", "dn2", "dn3"];
+            let dic = document.getElementById("input").value;
+            let index = engarray.indexOf(dic);
+            // gán vị của dic trong chuổi engarray cho index
+            document.getElementById("output").value = viearray[index];
+            document.getElementById("idoutput").innerHTML = "Examble:" + dn[index];
+    
+        } 
+
+        function transVitoEng(){
+            let engarray = ["hello", "one", "two"];
+            let viearray = ["xin chào", "một", "hai"];
+            let dne = ["dn1e", "dn2e", "dn3e"];
+            let dic = document.getElementById("output").value;
+            let index = viearray.indexOf(dic);
+            document.getElementById("output").value = engarray[index];
+            document.getElementById("idoutput").innerHTML = "Examble:" + dne[index];
+
+
+        }
+
+        
+        
+        function changeLanggue(){
+            let selboxone = document.getElementById("inputchange").selectedIndex;
+            let selboxtwo = document.getElementById("outputchange").selectedIndex;
+            if (selboxone == 0 && selboxtwo == 0)
+            {
+                document.getElementById("inputchange").value = "vietnam"
+                document.getElementById("outputchange").value = "english";
+            }
+            if (selboxone == 1 && selboxtwo == 1)
+            {
+                document.getElementById("inputchange").value = "english"
+                document.getElementById("outputchange").value = "vietnam"
+            }
+            if (selboxone == 0 && selboxtwo == 1)
+            {
+                document.getElementById("outputchange").value = "vietnam"
+            }
+            if (selboxone == 1 && selboxtwo == 0)
+            {
+                document.getElementById("outputchange").value = "english"
+            }
+            
+        }
+
+        // function changeLanggue(){
+        //     let 
+        //     if ()
+        // //   document.getElementById("inputchange").value = "vietnam";
+        // //   document.getElementById("inputchange").value = "english";
+        // }
+
+    </script>
+</body>
+
+</html>
