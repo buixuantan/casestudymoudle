@@ -4,28 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Dictionarywedside</title>
+    <style>
+        div.nen1 {
+            background-color: royalblue;
+            background-image: -moz-element(red);
+        }
+    </style>
 </head>
 <body>
-    <table border="1" style="width: 65%;">
+    <table style="position:absolute; left: 220px; top: 180px;" style="width: 65%;">
         <caption>
-            <img src="/PHOTO/imgine.jpg" style="width: 65%; height: 200px;" alt="imgine">
+                <img src="/PHOTO/imgine.jpg" style="width: 65%; height: 200px;" alt="imgine">
             <marquee>
-                <h4>hiển thị dòng chữ chạy</h4>
+                <h2 style="color:orangered">Dictionary For Coder</h2>
             </marquee>
         </caption>
         <thead>
             <tr>
-                <td>
+                <td align="Center">
                     <select id="inputchange">
                         <option value="english">English</option>
                         <option value="vietnam">VietNam</option>
                     </select>
                 </td>
-                <td>
-                    <input type="button" value="translanggua" onclick="changeLanggue()">
+                <td align="Center">
+                    <input style="background-color: royalblue;" type="button" value="Convert" onclick="changeLanggue()">
                 </td>
-                <td>
+                <td align="Center">
                     <select id="outputchange">
                         <option value="vietnam">VietNam</option>
                         <option value="english">English</option>
@@ -37,7 +43,7 @@
             <tr>
                 <td colspan="2">
                     <input type="text" id="input" style="height: 200px;">
-                    <input type="button" value="trans" onclick="transDictionary()">
+                    <input style="background-color: red;"type="button" value="trans" onclick="transDictionary()">
                 </td>
                 <td>
                     <input type="text" id="output" style="height: 200px;">
@@ -46,7 +52,7 @@
         </tbody>
         <tfoot style="height: 100px;">
             <tr>
-                <td colspan="3" id="idoutput">examble</td>
+                <td style="color: red" top: 20px;"colspan="3" id="idoutput">Example</td>
             </tr>
         </tfoot>
         
@@ -58,7 +64,6 @@
 
         function transDictionary(){
             let selboxone = document.getElementById("inputchange").selectedIndex;
-            // let selboxtwo = document.getElementById("outputchange").selectedIndex;
             if (selboxone == 0){
                 transEngtoVi()
             }
@@ -69,21 +74,272 @@
         }
 
         function transEngtoVi(){
-            let engarray = ["hello", "one", "two"];
-            let viearray = ["xin chào", "một", "hai"];
-            let dn = ["dn1", "dn2", "dn3"];
+            let engarray = 
+            ['hello',
+            'Multiplication',
+         'Number',
+        'Operation',
+        'Output',
+        'Perform',
+        'Process',
+        'Processor',
+        'Pulse',
+        'Register',
+        'Signal',
+        'Solution',
+        'Store',
+        'Subtraction',
+        'Switch',
+        'Tape',
+        'Terminal',
+        'Transmit',
+        'Abacus',
+        'Allocate',
+        'Analog',
+        'Application',
+        'Binary',
+        'Calculation',
+        'Command',
+        'Dependable',
+        'Devise',
+        'Different',
+        'Digital',
+        'Etch',
+        'Experiment',
+        'Remote Access',
+        'Computerize',
+        'Storage',
+        'Figure out',
+        'Generation',
+        'History',
+        'Imprint',
+        'Integrate',
+        'Invention',
+        'Layer',
+        'Mainframe computer',
+        'Ability',
+        'Access',
+        'Acoustic coupler',
+        'Analyst',
+        'Centerpiece',
+        'Channel',
+        'Characteristic',
+        'Cluster controller',
+        'Consist',
+        'Convert',
+        'Equipment',
+        'Multiplexor',
+        'Network',
+        'Peripheral',
+        'Reliability',
+        'Single-purpose',
+        'Teleconference',
+        'Multi-task',
+        'Arithmetic',
+        
+        ]
+            let viearray = 
+            ['xin chào',
+            'Phép nhân',
+        'Số',
+        'Thao tác',
+        'đưa ra',
+        'Tiến hành,',
+        'Xử lý',
+        'Bộ xử lý',
+        'Xung',
+        'Thanh ghi,',
+        'Tín hiệu',
+        'Giải pháp,',
+        'Lưu trữ',
+        'Phép trừ',
+        'Chuyển',
+        'Ghi băng,',
+        'Máy trạm',
+        'Truyền',
+        'Bàn tính',
+        'Phân phối',
+        'Tương tự',
+        'Ứng dụng',
+        'Nhị phân,',
+        'Tính toán',
+        'Ra lệnh,',
+        'Có thể tin cậy được',
+        'Phát minh',
+        'Khác biệt',
+        'Số,',
+        'Khắc axit',
+        'Cuộc thí nghiệm',
+        'Truy cập từ xa qua mạng',
+        'Tin học hóa',
+        'Lưu trữ',
+        'Tính toán',
+        'Thế hệ',
+        'Lịch sử',
+        'In',
+        'Tích hợp',
+        'Phát minh',
+        'Tầng, lớp',
+        'Máy tính lớn',
+        'Khả năng',
+        'Truy cập',
+        'Bộ ghép âm',
+        'Nhà phân tích',
+        'Mảnh trung tâm',
+        'Kênh',
+        'Thuộc tính',
+        'Bộ điều khiển trùm',
+        'Bao gồm',
+        'Chuyển đổi',
+        'Trang thiết bị',
+        'Bộ dồn kênh',
+        'Mạng',
+        'Ngoại vi',
+        'Sự có thể tin cậy được',
+        'Đơn mục đích',
+        'Hội thảo từ xa',
+        'Đa nhiệm',
+        'Số học',
+        
+        ]
+            let dn = ["Xin chào. Tôi là Tân", "dn2", "dn3"];
             let dic = document.getElementById("input").value;
             let index = engarray.indexOf(dic);
-            // gán vị của dic trong chuổi engarray cho index
             document.getElementById("output").value = viearray[index];
             document.getElementById("idoutput").innerHTML = "Examble:" + dn[index];
     
         } 
 
         function transVitoEng(){
-            let engarray = ["hello", "one", "two"];
-            let viearray = ["xin chào", "một", "hai"];
-            let dne = ["dn1e", "dn2e", "dn3e"];
+            let engarray = 
+            ['hello',
+            'Multiplication',
+         'Number',
+        'Operation',
+        'Output',
+        'Perform',
+        'Process',
+        'Processor',
+        'Pulse',
+        'Register',
+        'Signal',
+        'Solution',
+        'Store',
+        'Subtraction',
+        'Switch',
+        'Tape',
+        'Terminal',
+        'Transmit',
+        'Abacus',
+        'Allocate',
+        'Analog',
+        'Application',
+        'Binary',
+        'Calculation',
+        'Command',
+        'Dependable',
+        'Devise',
+        'Different',
+        'Digital',
+        'Etch',
+        'Experiment',
+        'Remote Access',
+        'Computerize',
+        'Storage',
+        'Figure out',
+        'Generation',
+        'History',
+        'Imprint',
+        'Integrate',
+        'Invention',
+        'Layer',
+        'Mainframe computer',
+        'Ability',
+        'Access',
+        'Acoustic coupler',
+        'Analyst',
+        'Centerpiece',
+        'Channel',
+        'Characteristic',
+        'Cluster controller',
+        'Consist',
+        'Convert',
+        'Equipment',
+        'Multiplexor',
+        'Network',
+        'Peripheral',
+        'Reliability',
+        'Single-purpose',
+        'Teleconference',
+        'Multi-task',
+        'Arithmetic',
+        
+        ]
+            let viearray = 
+            ['xin chào',
+            'Phép nhân',
+        'Số',
+        'Thao tác',
+        'đưa ra',
+        'Tiến hành,',
+        'Xử lý',
+        'Bộ xử lý',
+        'Xung',
+        'Thanh ghi',
+        'Tín hiệu',
+        'Giải pháp',
+        'Lưu trữ',
+        'Phép trừ',
+        'Chuyển',
+        'Ghi băng',
+        'Máy trạm',
+        'Truyền',
+        'Bàn tính',
+        'Phân phối',
+        'Tương tự',
+        'Ứng dụng',
+        'Nhị phân',
+        'Tính toán',
+        'Ra lệnh',
+        'Có thể tin cậy được',
+        'Phát minh',
+        'Khác biệt',
+        'Số',
+        'Khắc axit',
+        'Tiến hành thí nghiệm',
+        'Truy cập từ xa qua mạng',
+        'Tin học hóa',
+        'lưu trữ',
+        'Tính toán',
+        'Thế hệ',
+        'Lịch sử',
+        'In, khắc',
+        'Tích hợp',
+        'Phát minh',
+        'Lớp',
+        'Máy tính lớn',
+        'Khả năng',
+        'Truy cập',
+        'Bộ ghép âm',
+        'Nhà phân tích',
+        'Mảnh trung tâm',
+        'Kênh',
+        'Thuộc tính',
+        'Bộ điều khiển trùm',
+        'Bao gồm',
+        'Chuyển đổi',
+        'Trang thiết bị',
+        'Bộ dồn kênh',
+        'Mạng',
+        'Ngoại vi',
+        'Sự có thể tin cậy được',
+        'Đơn mục đích',
+        'Hội thảo từ xa',
+        'Đa nhiệm',
+        'Số học',
+        
+        ]
+            let dne = ["Hello. I am Tan", "dn2e", "dn3e"];
             let dic = document.getElementById("output").value;
             let index = viearray.indexOf(dic);
             document.getElementById("output").value = engarray[index];
@@ -117,14 +373,6 @@
             }
             
         }
-
-        // function changeLanggue(){
-        //     let 
-        //     if ()
-        // //   document.getElementById("inputchange").value = "vietnam";
-        // //   document.getElementById("inputchange").value = "english";
-        // }
-
     </script>
 </body>
 
